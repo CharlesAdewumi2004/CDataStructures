@@ -149,7 +149,7 @@ int addNode(binarytree **pRootNodePointer, int newElement)
         }
     }
 }
-void preOrderTraversal(binarytree *pRootNodePointer) {
+void preOrderTraversal(binarytree *pRootNodePointer) { 
     if (pRootNodePointer == NULL) {
         return;
     }

@@ -13,6 +13,7 @@ typedef struct student student;
 int hash(const char *name, int sizeOfHashTable);
 student *createNode(char *name, int age, int studentId);
 void displayHashTable(student **pHashTable, int sizeOfHashTable);
+student *searchHashTable(char *name, int sizeOfHashTable, student **pHashTable);
 
 int main()
 {
@@ -30,9 +31,13 @@ int main()
     pHashTable[hash("forsen", sizeOfHashTable)] = createNode("forsen", 18, 1765);
     pHashTable[hash("kappa", sizeOfHashTable)] = createNode("kappa", 12, 9543);
     pHashTable[hash("trihard", sizeOfHashTable)] = createNode("trihard", 99, 1348);
-
+    student *kappa = searchHashTable("charlie", sizeOfHashTable, pHashTable);
+    printf("%d\n", kappa->age);
     displayHashTable(pHashTable, sizeOfHashTable);
     return 0;
+}
+student *searchHashTable(char *name, int sizeOfHashTable, student **pHashTable){
+    return pHashTable[hash(name, sizeOfHashTable)];
 }
 int hash(const char *name, int sizeOfHashTable)
 {

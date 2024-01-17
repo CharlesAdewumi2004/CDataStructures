@@ -32,7 +32,8 @@ int main()
     pHashTable[hash("kappa", sizeOfHashTable)] = createNode("kappa", 12, 9543);
     pHashTable[hash("trihard", sizeOfHashTable)] = createNode("trihard", 99, 1348);
     student *kappa = searchHashTable("charlie", sizeOfHashTable, pHashTable);
-    printf("%d\n", kappa->age);
+    printf("age:%d\n", kappa->age);
+    printf("student id:%d\n", kappa->studentId);
     displayHashTable(pHashTable, sizeOfHashTable);
     return 0;
 }
